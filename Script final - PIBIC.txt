@@ -1,0 +1,867 @@
+tab.loc=file.choose()
+load(tab.loc)
+ls()
+names(CESPE)
+str(CESPE)
+
+p4c=CESPE$PAS.2004.3.QSC
+p5c=CESPE$PAS.2005.3.QSC
+p6c=CESPE$PAS.2006.3.QSC
+p7c=CESPE$PAS.2007.3.QSC
+p8c=CESPE$PAS.2008.3.QSC
+p9c=CESPE$PAS.2009.3.QSC
+p10c=CESPE$PAS.2010.3.QSC
+pasc=c('p4c','p5c','p6c','p7c','p8c','p9c','p10c')
+
+p5e=CESPE$PAS.2005.3.QSE
+p6e=CESPE$PAS.2006.3.QSE
+p7e=CESPE$PAS.2007.3.QSE
+p8e=CESPE$PAS.2008.3.QSE
+p9e=CESPE$PAS.2009.3.QSE
+p10e=CESPE$PAS.2010.3.QSE
+pase=c('p4e','p5e','p6e','p7e','p8e','p9e','p10e')
+
+v41c=CESPE$VESTUNB.04.1.QSC
+v42c=CESPE$VESTUNB.04.2.QSC
+v51c=CESPE$VESTUNB.05.1.QSC
+v52c=CESPE$VESTUNB.05.2.QSC
+v61c=CESPE$VESTUNB.06.1.QSC
+v62c=CESPE$VESTUNB.06.2.QSC
+v71c=CESPE$VESTUNB.07.1.QSE
+v72c=CESPE$VESTUNB.07.2.QSC
+vest1c=c('v41c','v42c','v51c','v52c','v61c','v62c','v72c')
+
+
+v72e=CESPE$VESTUNB.07.2.QSE
+
+
+v81e=CESPE$VESTUNB.08.1.QSE
+v82e=CESPE$VESTUNB.08.2.QSE
+CESPE[28]='VESTUNB.09.1.QSE'
+v91e=CESPE$VESTUNB.09.1.QSE
+v92e=CESPE$VESTUNB.09.2.QSE
+v101e=CESPE$VESTUNB.10.1.QSE
+v102e=CESPE$VESTUNB.10.2.QSE
+v111e=CESPE$VESTUNB.11.1.QSE
+v112e=CESPE$VESTUNB.11.2.QSE
+v121e=CESPE$VESTUNB.12.1.QSE
+vest1e=c('v81e','v82e','v92e','v101e','v102e','v111e','v112e','v121e')
+
+
+v81c=CESPE$VESTUNB.08.1.QSC
+v82c=CESPE$VESTUNB.08.2.QSC
+v91c=CESPE$VESTUNB.09.1.QSC
+vest2c=c('v81c','v82c','v91c')
+
+v101c=CESPE$VESTUNB.10.1.QSC
+
+v92c=CESPE$VESTUNB.09.2.QSC
+v102c=CESPE$VESTUNB.10.2.QSC
+v111c=CESPE$VESTUNB.11.1.QSC
+v112c=CESPE$VESTUNB.11.2.QSC
+v121c=CESPE$VESTUNB.12.1.QSC
+vest3c=c('v92c','v102c','v111c','v112c','v121c')
+
+
+
+
+v72e=v72e[,c(24,26)]
+names(v72e)=c('CasCand','CPFEncrypted')
+v72c=merge(v72c,v72e,by='CPFEncrypted', all=T)
+v81e=v81e[,c(22,24,26)]
+names(v81e)=c('TipRes','CasCand','CPFEncrypted')
+v81c=merge(v81c,v81e,by='CPFEncrypted', all=T)
+v82e=v82e[,c(22,24,26)]
+names(v82e)=c('TipRes','CasCand','CPFEncrypted')
+v82c=merge(v82c,v82e,by='CPFEncrypted', all=T)
+v92e=v92e[,c(22,24,26)]
+names(v92e)=c('TipRes','CasCand','CPFEncrypted')
+v92c=merge(v92c,v92e,by='CPFEncrypted', all=T)
+v101e=v101e[,c(22,24,26)]
+names(v101e)=c('TipRes','CasCand','CPFEncrypted')
+v101c=merge(v101c,v101e,by='CPFEncrypted', all=T)
+v102e=v102e[,c(22,24,26)]
+names(v102e)=c('TipRes','CasCand','CPFEncrypted')
+v102c=merge(v102c,v102e,by='CPFEncrypted', all=T)
+v111e=v111e[,c(22,24,26)]
+names(v111e)=c('TipRes','CasCand','CPFEncrypted')
+v111c=merge(v111c,v111e,by='CPFEncrypted', all=T)
+v112e=v112e[,c(22,24,26)]
+names(v112e)=c('TipRes','CasCand','CPFEncrypted')
+v112c=merge(v112c,v112e,by='CPFEncrypted', all=T)
+v121e=v121e[,c(22,24,26)]
+names(v121e)=c('TipRes','CasCand','CPFEncrypted')
+v121c=merge(v121c,v121e,by='CPFEncrypted', all=T)
+p5e=p5e[,c(11,15,17)]
+names(p5e)=c('FezFazSup','CasCand','CPFEncrypted')
+p5c=merge(p5c,p5e,by='CPFEncrypted', all=T)
+p6e=p6e[,c(11,15,17)]
+names(p6e)=c('FezFazSup','CasCand','CPFEncrypted')
+p6c=merge(p6c,p6e,by='CPFEncrypted', all=T)
+p7e=p7e[,c(11,15,17)]
+names(p7e)=c('FezFazSup','CasCand','CPFEncrypted')
+p7c=merge(p7c,p7e,by='CPFEncrypted', all=T)
+p8e=p8e[,c(16,20,22)]
+names(p8e)=c('FezFazSup','CasCand','CPFEncrypted')
+p8c=merge(p8c,p8e,by='CPFEncrypted', all=T)
+p9e=p9e[,c(19,23,25)]
+names(p9e)=c('FezFazSup','CasCand','CPFEncrypted')
+p9c=merge(p9c,p9e,by='CPFEncrypted', all=T)
+p10e=p10e[,c(19,23,25)]
+names(p10e)=c('FezFazSup','CasCand','CPFEncrypted')
+p10c=merge(p10c,p10e,by='CPFEncrypted', all=T)
+
+
+v41sc=v41c
+v42sc=v42c
+v51sc=v51c[,-17]
+v52sc=v52c[,-17]
+v61sc=v61c[,-17]
+v62sc=v62c[,-17]
+v71sc=v71c[,-17]
+
+a=rbind(v41sc,v42sc,v51sc,v52sc,v61sc,v62sc,v71sc)
+
+b=which(names(a)=='Item1')
+names(a)[b]='EstCiv'
+b=which(names(a)=='Item2')
+names(a)[b]='TipRes'
+b=which(names(a)=='Item3')
+names(a)[b]='Renda'
+b=which(names(a)=='Item4')
+names(a)[b]='EscPai'
+b=which(names(a)=='Item5')
+names(a)[b]='EscMae'
+b=which(names(a)=='Item6')
+names(a)[b]='Cor'
+b=which(names(a)=='Item7')
+names(a)[b]='DecNegro'
+b=which(names(a)=='Item8')
+names(a)[b]='AtivRemun'
+b=which(names(a)=='Item9')
+names(a)[b]='EnsMed'
+b=which(names(a)=='Item10')
+names(a)[b]='ConclEnsMed'
+b=which(names(a)=='Item14')
+names(a)[b]='FezFazSup'
+b=which(names(a)=='Item18')
+names(a)[b]='Mora'
+b=which(names(a)=='Item12')
+names(a)[b]='CursPrep'
+b=which(names(a)=='Item15')
+names(a)[b]='RelCursInsc'
+b=which(names(a)=='Item16')
+names(a)[b]='FatDecCurs'
+h=a
+
+
+
+
+v92sc=v92c
+v102sc=v102c
+v111sc=v111c 
+v112sc=v112c
+v121sc=v121c
+
+c=rbind(v92sc,v102sc,v111sc,v112sc,v121sc)
+
+b=which(names(c)=='Item6')
+names(c)[b]='EstCiv'
+b=which(names(c)=='Item8')
+names(c)[b]='Renda'
+b=which(names(c)=='Item9')
+names(c)[b]='EscPai'
+b=which(names(c)=='Item10')
+names(c)[b]='EscMae'
+b=which(names(c)=='Item11')
+names(c)[b]='Cor'
+b=which(names(c)=='Item12')
+names(c)[b]='DecNegro'
+b=which(names(c)=='Item13')
+names(c)[b]='AtivRemun'
+b=which(names(c)=='Item16')
+names(c)[b]='EnsMed'
+b=which(names(c)=='Item17')
+names(c)[b]='ConclEnsMed'
+b=which(names(c)=='Item20')
+names(c)[b]='FezFazSup'
+b=which(names(c)=='Item22')
+names(c)[b]='Mora'
+b=which(names(c)=='Item12')
+names(c)[b]='CursPrep'
+b=which(names(c)=='Item19')
+names(c)[b]='FatDecCurs'
+
+
+v81sc=v81c
+v82sc=v82c
+v91sc=v91c
+
+d=rbind(v81sc,v82sc)
+
+b=which(names(d)=='Item3')
+names(d)[b]='EstCiv'
+b=which(names(d)=='Item5')
+names(d)[b]='Renda'
+b=which(names(d)=='Item6')
+names(d)[b]='EscPai'
+b=which(names(d)=='Item7')
+names(d)[b]='EscMae'
+b=which(names(d)=='Item8')
+names(d)[b]='Cor'
+b=which(names(d)=='Item9')
+names(d)[b]='DecNegro'
+b=which(names(d)=='Item10')
+names(d)[b]='AtivRemun'
+b=which(names(d)=='Item13')
+names(d)[b]='EnsMed'
+b=which(names(d)=='Item14')
+names(d)[b]='ConclEnsMed'
+b=which(names(d)=='Item17')
+names(d)[b]='FezFazSup'
+b=which(names(d)=='Item19')
+names(d)[b]='Mora'
+b=which(names(d)=='Item16')
+names(d)[b]='FatDecCurs'
+k=d
+
+v101sc=v101c
+e=v101sc
+
+b=which(names(e)=='Item5')
+names(e)[b]='EstCiv'
+b=which(names(e)=='Item6')
+names(e)[b]='Renda'
+b=which(names(e)=='Item7')
+names(e)[b]='EscPai'
+b=which(names(e)=='Item8')
+names(e)[b]='EscMae'
+b=which(names(e)=='Item9')
+names(e)[b]='Cor'
+b=which(names(e)=='Item10')
+names(e)[b]='AtivRemun'
+b=which(names(e)=='Item13')
+names(e)[b]='FezFazSup'
+b=which(names(e)=='Item15')
+names(e)[b]='Mora'
+b=which(names(e)=='Item12')
+names(e)[b]='FatDecCurs'
+
+
+v71e
+v72e
+v81e
+v82e
+v91e
+v92e
+v101e
+v102e
+v111e
+v112e
+v121e
+
+f=rbind(v71se,v72se,v81se,v82se,v91se,v92se,v101se,v102se,v111se,v112se,v121se)
+
+b=which(names(f)=='Item6')
+names(f)[b]='EstCiv'
+b=which(names(f)=='Item8')
+names(f)[b]='Renda'
+b=which(names(f)=='Item9')
+names(f)[b]='EscPai'
+b=which(names(f)=='Item10')
+names(f)[b]='EscMae'
+b=which(names(f)=='Item11')
+names(f)[b]='Cor'
+b=which(names(f)=='Item12')
+names(f)[b]='DecNegro'
+b=which(names(f)=='Item13')
+names(f)[b]='AtivRemun'
+b=which(names(f)=='Item16')
+names(f)[b]='EnsMed'
+b=which(names(f)=='Item17')
+names(f)[b]='ConclEnsMed'
+b=which(names(f)=='Item20')
+names(f)[b]='FezFazSup'
+b=which(names(f)=='Item22')
+names(f)[b]='Mora'
+b=which(names(f)=='Item12')
+names(f)[b]='CursPrep'
+b=which(names(f)=='Item19')
+names(f)[b]='FatDecCurs'
+
+
+p5sc=p5c
+p6sc=p6c
+p7sc=p7c
+p8sc=p8c
+p9sc=p9c
+p10sc=p10c
+g=rbind(p5sc,p6sc,p7sc,p8sc,p9sc,p10sc)
+
+b=which(names(g)=='Item1')
+names(g)[b]='EstCiv'
+b=which(names(g)=='Item2')
+names(g)[b]='TipRes'
+b=which(names(g)=='Item3')
+names(g)[b]='Renda'
+b=which(names(g)=='Item8')
+names(g)[b]='EscPai'
+b=which(names(g)=='Item9')
+names(g)[b]='EscMae'
+b=which(names(g)=='Item10')
+names(g)[b]='Cor'
+b=which(names(g)=='Item11')
+names(g)[b]='DecNegro'
+b=which(names(g)=='Item12')
+names(g)[b]='AtivRemun'
+b=which(names(g)=='Item19')
+names(g)[b]='Mora'
+b=which(names(g)=='Item15')
+names(g)[b]='CursPrep'
+b=which(names(g)=='Item13')
+names(g)[b]='RelCursInsc'
+b=which(names(g)=='Item14')
+names(g)[b]='FatDecCurs'
+b=which(names(g)=='Item4')
+names(g)[b]='QuartRes'
+b=which(names(g)=='Item5')
+names(g)[b]='BanhRes'
+b=which(names(g)=='Item6')
+names(g)[b]='CarFam'
+j=g
+
+
+a=v72c
+
+b=which(names(a)=='Item1')
+names(a)[b]='EstCiv'
+b=which(names(a)=='Item2')
+names(a)[b]='TipRes'
+b=which(names(a)=='Item3')
+names(a)[b]='Renda'
+b=which(names(a)=='Item4')
+names(a)[b]='EscPai'
+b=which(names(a)=='Item5')
+names(a)[b]='EscMae'
+b=which(names(a)=='Item6')
+names(a)[b]='Cor'
+b=which(names(a)=='Item7')
+names(a)[b]='DecNegro'
+b=which(names(a)=='Item8')
+names(a)[b]='AtivRemun'
+b=which(names(a)=='Item9')
+names(a)[b]='EnsMed'
+b=which(names(a)=='Item10')
+names(a)[b]='ConclEnsMed'
+b=which(names(a)=='Item14')
+names(a)[b]='FezFazSup'
+b=which(names(a)=='Item18')
+names(a)[b]='Mora'
+b=which(names(a)=='Item12')
+names(a)[b]='CursPrep'
+b=which(names(a)=='Item15')
+names(a)[b]='RelCursInsc'
+b=which(names(a)=='Item16')
+names(a)[b]='FatDecCurs'
+a
+
+
+
+d=v91c
+
+b=which(names(d)=='Item3')
+names(d)[b]='EstCiv'
+b=which(names(d)=='Item5')
+names(d)[b]='Renda'
+b=which(names(d)=='Item6')
+names(d)[b]='EscPai'
+b=which(names(d)=='Item7')
+names(d)[b]='EscMae'
+b=which(names(d)=='Item8')
+names(d)[b]='Cor'
+b=which(names(d)=='Item9')
+names(d)[b]='DecNegro'
+b=which(names(d)=='Item10')
+names(d)[b]='AtivRemun'
+b=which(names(d)=='Item13')
+names(d)[b]='EnsMed'
+b=which(names(d)=='Item14')
+names(d)[b]='ConclEnsMed'
+b=which(names(d)=='Item17')
+names(d)[b]='FezFazSup'
+b=which(names(d)=='Item19')
+names(d)[b]='Mora'
+b=which(names(d)=='Item16')
+names(d)[b]='FatDecCurs'
+d
+
+
+g=p4c
+
+b=which(names(g)=='Item1')
+names(g)[b]='EstCiv'
+b=which(names(g)=='Item2')
+names(g)[b]='TipRes'
+b=which(names(g)=='Item3')
+names(g)[b]='Renda'
+b=which(names(g)=='Item8')
+names(g)[b]='EscPai'
+b=which(names(g)=='Item9')
+names(g)[b]='EscMae'
+b=which(names(g)=='Item10')
+names(g)[b]='Cor'
+b=which(names(g)=='Item11')
+names(g)[b]='DecNegro'
+b=which(names(g)=='Item12')
+names(g)[b]='AtivRemun'
+b=which(names(g)=='Item19')
+names(g)[b]='Mora'
+b=which(names(g)=='Item15')
+names(g)[b]='CursPrep'
+b=which(names(g)=='Item13')
+names(g)[b]='RelCursInsc'
+b=which(names(g)=='Item14')
+names(g)[b]='FatDecCurs'
+b=which(names(g)=='Item4')
+names(g)[b]='QuartRes'
+b=which(names(g)=='Item5')
+names(g)[b]='BanhRes'
+b=which(names(g)=='Item6')
+names(g)[b]='CarFam'
+g
+
+####### v41sc,v42sc,v51sc,v52sc,v61sc,v62sc,v71sc ==>> h ######
+####### v92sc,v102sc,v111sc,v112sc,v121sc ==>> c ######
+####### v81sc,v82sc ==>> k ######
+####### v101sc ==>> e ######
+####### p5sc,p6sc,p7sc,p8sc,p9sc,p10sc ==>> j ######
+####### v72c ==>> a ######
+####### v91c ==>> d ######
+####### p4c ==>> g ###### 
+
+h[] <- lapply(h, as.character)
+c[] <- lapply(c, as.character)
+k[] <- lapply(k, as.character)
+e[] <- lapply(e, as.character)
+j[] <- lapply(j, as.character)
+a[] <- lapply(a, as.character)
+d[] <- lapply(d, as.character)
+g[] <- lapply(g, as.character)
+
+e$EstCiv[which(e$EstCiv=='4')]='0'
+e$EstCiv[which(e$EstCiv=='5')]='0'
+
+k$TipRes[which(k$TipRes=='1')]='13'
+k$TipRes[which(k$TipRes=='2')]='15'
+k$TipRes[which(k$TipRes=='3')]='15'
+k$TipRes[which(k$TipRes=='5')]='11'
+k$TipRes[which(k$TipRes=='6')]='12'
+k$TipRes[which(k$TipRes=='13')]='3'
+k$TipRes[which(k$TipRes=='15')]='5'
+k$TipRes[which(k$TipRes=='15')]='5'
+k$TipRes[which(k$TipRes=='11')]='1'
+k$TipRes[which(k$TipRes=='12')]='2'
+d$TipRes[which(d$TipRes=='1')]='13'
+d$TipRes[which(d$TipRes=='2')]='15'
+d$TipRes[which(d$TipRes=='3')]='15'
+d$TipRes[which(d$TipRes=='5')]='11'
+d$TipRes[which(d$TipRes=='6')]='12'
+d$TipRes[which(d$TipRes=='13')]='3'
+d$TipRes[which(d$TipRes=='15')]='5'
+d$TipRes[which(d$TipRes=='15')]='5'
+d$TipRes[which(d$TipRes=='11')]='1'
+d$TipRes[which(d$TipRes=='12')]='2'
+e$TipRes[which(e$TipRes=='1')]='13'
+e$TipRes[which(e$TipRes=='2')]='15'
+e$TipRes[which(e$TipRes=='3')]='15'
+e$TipRes[which(e$TipRes=='5')]='11'
+e$TipRes[which(e$TipRes=='6')]='12'
+e$TipRes[which(e$TipRes=='13')]='3'
+e$TipRes[which(e$TipRes=='15')]='5'
+e$TipRes[which(e$TipRes=='15')]='5'
+e$TipRes[which(e$TipRes=='11')]='1'
+e$TipRes[which(e$TipRes=='12')]='2'
+c$TipRes[which(c$TipRes=='1')]='13'
+c$TipRes[which(c$TipRes=='2')]='15'
+c$TipRes[which(c$TipRes=='3')]='15'
+c$TipRes[which(c$TipRes=='5')]='11'
+c$TipRes[which(c$TipRes=='6')]='12'
+c$TipRes[which(c$TipRes=='13')]='3'
+c$TipRes[which(c$TipRes=='15')]='5'
+c$TipRes[which(c$TipRes=='15')]='5'
+c$TipRes[which(c$TipRes=='11')]='1'
+c$TipRes[which(c$TipRes=='12')]='2'
+
+j$RelCursInsc[which(j$RelCursInsc=='4')]=''
+j$RelCursInsc[which(j$RelCursInsc=='5')]=''
+j$RelCursInsc[which(j$RelCursInsc=='6')]=''
+j$RelCursInsc[which(j$RelCursInsc=='8')]=''
+
+g$EscPai[which(g$EscPai=='6')]='5'
+g$EscPai[which(g$EscPai=='7')]='6'
+j$EscPai[which(j$EscPai=='6')]='5'
+j$EscPai[which(j$EscPai=='7')]='6'
+e$EscPai[which(e$EscPai=='7')]=''
+e$EscPai[which(e$EscPai=='8')]=''
+e$EscPai[which(e$EscPai=='9')]=''
+e$EscPai[which(e$EscPai=='10')]=''
+
+g$EscMae[which(g$EscMae=='6')]='5'
+g$EscMae[which(g$EscMae=='7')]='6'
+j$EscMae[which(j$EscMae=='6')]='5'
+j$EscMae[which(j$EscMae=='7')]='6'
+e$EscMae[which(e$EscMae=='7')]=''
+e$EscMae[which(e$EscMae=='8')]=''
+e$EscMae[which(e$EscMae=='9')]=''
+e$EscMae[which(e$EscMae=='10')]=''
+
+e$AtivRemun[which(e$AtivRemun=='5')]=''
+e$AtivRemun[which(e$AtivRemun=='6')]=''
+
+h$EnsMed[which(h$EnsMed=='3')]='2'
+h$EnsMed[which(h$EnsMed=='5')]='4'
+h$EnsMed[which(h$EnsMed=='6')]='3'
+h$EnsMed[which(h$EnsMed=='7')]='3'
+h$EnsMed[which(h$EnsMed=='8')]='5'
+h$EnsMed[which(h$EnsMed=='9')]='5'
+a$EnsMed[which(a$EnsMed=='3')]='2'
+a$EnsMed[which(a$EnsMed=='5')]='4'
+a$EnsMed[which(a$EnsMed=='6')]='3'
+a$EnsMed[which(a$EnsMed=='7')]='3'
+a$EnsMed[which(a$EnsMed=='8')]='5'
+a$EnsMed[which(a$EnsMed=='9')]='5'
+
+h$ConclEnsMed[which(h$ConclEnsMed=='4')]='3'
+h$ConclEnsMed[which(h$ConclEnsMed=='5')]='3'
+a$ConclEnsMed[which(a$ConclEnsMed=='4')]='3'
+a$ConclEnsMed[which(a$ConclEnsMed=='5')]='3'
+
+e$FezFazSup[which(e$FezFazSup=='2')]=''
+e$FezFazSup[which(e$FezFazSup=='3')]='2'
+e$FezFazSup[which(e$FezFazSup=='4')]='2'
+e$FezFazSup[which(e$FezFazSup=='5')]='2'
+e$FezFazSup[which(e$FezFazSup=='6')]='3'
+e$FezFazSup[which(e$FezFazSup=='7')]='1'
+j$FezFazSup[which(j$FezFazSup=='2')]=''
+j$FezFazSup[which(j$FezFazSup=='3')]='2'
+j$FezFazSup[which(j$FezFazSup=='4')]='2'
+j$FezFazSup[which(j$FezFazSup=='5')]='2'
+j$FezFazSup[which(j$FezFazSup=='6')]='3'
+j$FezFazSup[which(j$FezFazSup=='7')]='1'
+
+j$FatDecCurs[which(j$FatDecCurs=='5')]='4'
+j$FatDecCurs[which(j$FatDecCurs=='6')]='5'
+j$FatDecCurs[which(j$FatDecCurs=='7')]='6'
+g$FatDecCurs[which(g$FatDecCurs=='5')]='4'
+g$FatDecCurs[which(g$FatDecCurs=='6')]='5'
+g$FatDecCurs[which(g$FatDecCurs=='7')]='6'
+
+
+nomes=c('CPFEncrypted','EstCiv','TipRes','Renda','EscPai','EscMae','Cor','DecNegro','AtivRemun','EnsMed','ConclEnsMed','FezFazSup','Mora','RelCursInsc','CasCand','FatDecCurs')
+
+h$CasCand=rep('', nrow(h))
+h1=h[,nomes]
+a$CasCand=rep('', nrow(a))
+a1=a[,nomes]
+k$RelCursInsc=rep('', nrow(k))
+k1=k[,nomes]
+d$RelCursInsc=rep('', nrow(d))
+d$TipRes=rep('', nrow(d))
+d$CasCand=rep('', nrow(d))
+d1=d[,nomes]
+e$DecNegro=rep('', nrow(e))
+e$EnsMed=rep('', nrow(e))
+e$RelCursInsc=rep('', nrow(e))
+e$ConclEnsMed=rep('', nrow(e))
+e1=e[,nomes]
+c$RelCursInsc=rep('', nrow(c))
+c1=c[,nomes]
+g$EnsMed=rep('', nrow(g))
+g$ConclEnsMed=rep('', nrow(g))
+g$FezFazSup=rep('', nrow(g))
+g$CasCand=rep('', nrow(g))
+g1=g[,nomes]
+j$EnsMed=rep('', nrow(j))
+j$ConclEnsMed=rep('', nrow(j))
+j1=j[,nomes]
+
+dados=rbind(h1,a1,k1,d1,e1,c1,g1,j1)
+nrow(dados)
+str(dados)
+teste=dados
+teste[teste=='']=NA
+teste2=na.omit(teste)
+table(dados$EstCiv)
+table(dados$TipRes)
+table(dados$Renda)
+table(dados$EscPai)
+table(dados$EscMae)
+table(dados$Cor)
+table(dados$DecNegro)
+table(dados$AtivRemun)
+table(dados$EnsMed)
+table(dados$ConclEnsMed)
+table(dados$FezFazSup)
+table(dados$Mora)
+table(dados$RelCursInsc)
+table(dados$CasCand)
+table(dados$FatDecCurs)
+
+
+
+alunos.loc=file.choose()
+load(alunos.loc)
+ls()
+
+names(tab)
+CS=tab[tab$ABI=='Ciências Sociais',]
+CS[] <- lapply(CS, as.character)
+l=table(CS$CPFEncrypted)
+names(l)
+a=names(l)
+base=NULL
+for(i in 1:length(a)){
+b=CS[CS$CPFEncrypted==a[i],]
+b=b[nrow(b),]
+base=rbind(base, b)
+}
+View(base)
+
+krl=merge(base,dados,by='CPFEncrypted')
+nrow(krl)
+m=table(krl$CPFEncrypted)
+v=names(m)
+CS=NULL
+for(i in 1:length(v)){
+b=krl[krl$CPFEncrypted==v[i],]
+b=b[nrow(b),]
+CS=rbind(CS, b)
+}
+nrow(CS)
+View(CS)
+
+
+
+names(tab)
+IE1=tab[tab$ABI=='Ciência da Computação',]
+IE2=tab[tab$ABI=='Estatística',]
+IE3=tab[tab$ABI=='Matemática',]
+IE4=tab[tab$ABI=='Matemática - Segunda Licenciatura',]
+IE=rbind(IE1,IE2,IE3,IE4)
+IE[] <- lapply(IE, as.character)
+n=table(IE$CPFEncrypted)
+a=names(n)
+base=NULL
+for(i in 1:length(a)){
+b=IE[IE$CPFEncrypted==a[i],]
+b=b[nrow(b),]
+base=rbind(base, b)
+}
+View(base)
+
+krl=merge(base,dados,by='CPFEncrypted')
+nrow(krl)
+m=table(krl$CPFEncrypted)
+v=names(m)
+IE=NULL
+for(i in 1:length(v)){
+b=krl[krl$CPFEncrypted==v[i],]
+b=b[nrow(b),]
+IE=rbind(IE, b)
+}
+nrow(IE)
+View(IE)
+
+setwd('D:\\USERS\\ebarreto\\Desktop\\Coup de Grâce\\PIBIC')
+write.csv(CS, 'Ciências Sociais.csv', row.names=F,sep=';')
+write.csv(IE, 'Instituto de Exatas.csv', row.names=F,sep=';')
+
+
+###############################################################################
+###############################################################################
+###############################################################################
+###############################################################################
+###############################################################################
+###############################################################################
+RODE TUDO ATÉ AQUI |||| RODE TUDO ATÉ AQUI ||||| RODE TUDO ATÉ AQUI |||||
+###############################################################################
+###############################################################################
+###############################################################################
+###############################################################################
+###############################################################################
+###############################################################################
+
+
+
+
+#base <- CS[!duplicated(CS$CPFEncrypted),]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+p4qsc=CESPE$PAS.2004.3.QSC
+p4qsc=p4qsc[,c(2:16, length(names(p4qsc)))]
+p5c=CESPE$PAS.2005.3.QSC
+p5c=p5c[,c(2:16, length(names(p5c)))]
+names(p5c)=names(p4qsc)
+p6c=CESPE$PAS.2006.3.QSC
+p6c=p6c[,c(2:16, length(names(b3)))]
+names(p6c)=names(p4qsc)
+p7c=CESPE$PAS.2007.3.QSC
+p7c=p7c[,c(2:16, length(names(p7c)))]
+names(p7c)=names(p4qsc)
+p8c=CESPE$PAS.2008.3.QSC
+p8c=p8c[,c(2:16, length(names(p8c)))]
+names(p8c)=names(p4qsc)
+p9c=CESPE$PAS.2009.3.QSC
+p9c=p9c[,c(2:16, length(names(p9c)))]
+names(p9c)=names(p4qsc)
+p10c=CESPE$PAS.2010.3.QSC
+p10c=p10c[,c(2:16, length(names(p10c)))]
+names(p10c)=names(p4qsc)
+p8e=CESPE$PAS.2008.3.QSE
+p8e=p8e[,c(2:16, length(names(p8e)))]
+names(p8e)=names(p4qsc)
+p9e=CESPE$PAS.2009.3.QSE
+p9e=p9e[,c(2:16, length(names(p9e)))]
+names(p9e)=names(p4qsc)
+b10=CESPE$PAS.2010.3.QSE
+b10=b10[,c(2:16, length(names(b10)))]
+names(b10)=names(p4qsc)
+b11=CESPE$VESTUNB.04.1.QSC
+b11=b11[,c(2:16, length(names(b11)))]
+names(b11)=names(p4qsc)
+b12=CESPE$VESTUNB.04.2.QSC
+b12=b12[,c(2:16, length(names(b12)))]
+names(b12)=names(p4qsc)
+b13=CESPE$VESTUNB.05.1.QSC
+b13=b13[,c(2:16, length(names(b13)))]
+names(b13)=names(p4qsc)
+b14=CESPE$VESTUNB.05.2.QSC
+b14=b14[,c(2:16, length(names(b14)))]
+names(b14)=names(p4qsc)
+b15=CESPE$VESTUNB.06.1.QSC
+b15=b15[,c(2:16, length(names(b15)))]
+names(b15)=names(p4qsc)
+b16=CESPE$VESTUNB.06.2.QSC
+b16=b16[,c(2:16, length(names(b16)))]
+names(b16)=names(p4qsc)
+b17=CESPE$VESTUNB.07.1.QSE
+b17=b17[,c(2:16, length(names(b17)))]
+names(b17)=names(p4qsc)
+b18=CESPE$VESTUNB.07.2.QSC
+b18=b18[,c(2:16, length(names(b18)))]
+names(b18)=names(p4qsc)
+b19=CESPE$VESTUNB.07.2.QSE
+b19=b19[,c(2:16, length(names(b19)))]
+names(b19)=names(p4qsc)
+b20=CESPE$VESTUNB.08.1.QSC
+b20=b20[,c(2:16, length(names(b20)))]
+names(b20)=names(p4qsc)
+b21=CESPE$VESTUNB.08.1.QSE
+b21=b21[,c(2:16, length(names(b21)))]
+names(b21)=names(p4qsc)
+b22=CESPE$VESTUNB.08.2.QSC
+b22=b22[,c(2:16, length(names(b22)))]
+names(b22)=names(p4qsc)
+b23=CESPE$VESTUNB.08.2.QSE
+b23=b23[,c(2:16, length(names(b23)))]
+names(b23)=names(p4qsc)
+b24=CESPE$VESTUNB.09.1.QSC
+b24=b24[,c(2:16, length(names(b24)))]
+names(b24)=names(p4qsc)
+b25=CESPE$VESTUNB.09.1.QSC
+b25=b25[,c(2:16, length(names(b25)))]
+names(b25)=names(p4qsc)
+b26=CESPE$VESTUNB.09.2.QSC
+b26=b26[,c(2:16, length(names(b26)))]
+names(b26)=names(p4qsc)
+b27=CESPE$VESTUNB.09.2.QSE
+b27=b27[,c(2:16, length(names(b27)))]
+names(b27)=names(p4qsc)
+b28=CESPE$VESTUNB.10.1.QSC
+b28=b28[,c(2:16, length(names(b28)))]
+names(b28)=names(p4qsc)
+b29=CESPE$VESTUNB.10.1.QSE
+b29=b29[,c(2:16, length(names(b29)))]
+names(b29)=names(p4qsc)
+b30=CESPE$VESTUNB.10.2.QSC
+b30=b30[,c(2:16, length(names(b30)))]
+names(b30)=names(p4qsc)
+b31=CESPE$VESTUNB.10.2.QSE
+b31=b31[,c(2:16, length(names(b31)))]
+names(b31)=names(p4qsc)
+b32=CESPE$VESTUNB.11.1.QSC
+b32=b32[,c(2:16, length(names(b32)))]
+names(b32)=names(p4qsc)
+b33=CESPE$VESTUNB.11.1.QSE
+b33=b33[,c(2:16, length(names(b33)))]
+names(b33)=names(p4qsc)
+b34=CESPE$VESTUNB.11.2.QSC
+b34=b34[,c(2:16, length(names(b34)))]
+names(b34)=names(p4qsc)
+b35=CESPE$VESTUNB.11.2.QSE
+b35=b35[,c(2:16, length(names(b35)))]
+names(b35)=names(p4qsc)
+b36=CESPE$VESTUNB.12.1.QSC
+b36=b36[,c(2:16, length(names(b36)))]
+names(b36)=names(p4qsc)
+b37=CESPE$VESTUNB.12.1.QSE
+b37=b37[,c(2:16, length(names(b37)))]
+names(b37)=names(p4qsc)
+
+gigante=rbind(b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,
+b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37)
+
+
+gigante$CPFEncrypted=as.character(gigante$CPFEncrypted)
+
+
+
+dados=read.csv(file.choose(), header=T, sep=';')
+names(dados)
+dados$CPFEncrypted=as.character(dados$CPFEncrypted)
+CPFEncrypted=dados$CPFEncrypted
+teste=merge(dados, gigante, by=intersect(names(dados)[16], names(gigante)[16]))
+nrow(teste)
+
+
+
+## v
+
+
+
+
+
+
+
+
+
