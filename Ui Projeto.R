@@ -1,7 +1,8 @@
-Cálculo1=c("Cálculo2","y","z")
-IP=c("Métodos","a","b")
-Métodos=c("Métodos2","t","s")
-Cálculo2=c("Cálculo3","u","v")
+Cálculo1=c("Cálculo2","y","z","")
+IP=c("Métodos","a","b","")
+Métodos=c("Métodos2","t","s","")
+Cálculo2=c("Cálculo3","u","v","")
+Cálculo3=c()
 a=0:9
 b=10:19
 t=20:29
@@ -13,10 +14,10 @@ runApp(list(
     selectInput('m1', 'Primeira matéria', c("",'Cálculo1', 'IP'),selected=""),
     conditionalPanel(
       condition = "input.m1 == 'Cálculo1'||input.m1 == 'IP'",
-    selectInput('m2', 'Segunda matéria', "",selected="")),
+    selectInput('m2', 'Segunda matéria', "")),
     conditionalPanel(
       condition ="input.m2=='Cálculo2'|| input.m2=='Métodos'",
-    selectInput('m3','Terceira matéria',"",selected=""))
+    selectInput('m3','Terceira matéria',""))
     ),
   server = function(input, output, session){
     outVar = reactive({
@@ -27,7 +28,7 @@ runApp(list(
     })
     observe({
       updateSelectInput(session, "m2",
-                        choices = outVar()
+                        choices = outVar(),selected=""
       )})
     outVar1 = reactive({
       if (input$m2 == "")
@@ -38,8 +39,9 @@ runApp(list(
     a=c("w","k")
     observe({
       updateSelectInput(session, "m3",
-                        choices = outVar1()
+                        choices = outVar1(),selected=""
       )})
   }
 ))
+
 
