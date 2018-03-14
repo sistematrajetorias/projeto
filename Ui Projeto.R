@@ -36,7 +36,6 @@ runApp(list(
       mydata1 = get(input$m2)
       mydata1
     })
-    a=c("w","k")
     observe({
       updateSelectInput(session, "m3",
                         choices = outVar1(),selected=""
